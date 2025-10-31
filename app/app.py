@@ -9,8 +9,8 @@ counter = Counter('flask_requests_total', 'Total requests served')
 def home():
     # simulate intermittent failure
     counter.inc()
-    if random.choice([True, False]):  # 50% chance
-        return jsonify({"error": "Simulated failure"}), 500
+    #if random.choice([True, False]):  # 50% chance
+    #    return jsonify({"error": "Simulated failure"}), 500
     return jsonify({"message": "Welcome to Prometheus-monitored Flask app"})
 
 @app.route('/metrics')
